@@ -485,8 +485,7 @@ npm run build:h5      # 构建产物 dist/build/h5
 │   └── README.md                  # Web 端详细说明
 ├── ESP8266固件烧录资料/
 │   └── esp8285-1MB-at/            # ESP-01S 可用的 1MB AT 固件 + 烧录地址表
-├── Doc/
-│   └── 开发历程整理.docx           # 完整开发记录（正文 60 条 + 附录 10 条经验）
+├── 开发历程问题整理.docx            # 开发过程中遇到的问题：现象 / 原因 / 解决办法（47 条 + 附录 10 条）
 ├── tools/                         # 工程自用的辅助脚本与编码约定
 │   ├── README.md                  # 脚本用途说明 + 源码编码约定（GBK 的原因与注意事项）
 │   ├── gen_font.py                # 字库生成：从 simhei/consola 渲染点阵，输出 font.c/font.h
