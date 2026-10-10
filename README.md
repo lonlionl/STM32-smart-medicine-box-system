@@ -487,14 +487,14 @@ npm run build:h5      # 构建产物 dist/build/h5
 │   └── esp8285-1MB-at/            # ESP-01S 可用的 1MB AT 固件 + 烧录地址表
 ├── Doc/
 │   └── 开发历程整理.docx           # 完整开发记录（正文 60 条 + 附录 10 条经验）
-├── tools/                         # 辅助脚本（只保留"缺了就跑不起来"或对使用者有实质用处的）
-│   ├── FILE_ENCODING.md           # 端文件编码清单与理由（全工程统一 GBK）
-│   ├── gen_font.py                # 字库生成：从 simhei/consola 生成 font.c/font.h
+├── tools/                         # 工程自用的辅助脚本与编码约定
+│   ├── README.md                  # 脚本用途说明 + 源码编码约定（GBK 的原因与注意事项）
+│   ├── gen_font.py                # 字库生成：从 simhei/consola 渲染点阵，输出 font.c/font.h
 │   │                              #   （196 字形：95 ASCII + 11 数字 + 75 GBK16 + 15 GBK24）
-│   │                              #   **【注意】** 改界面上任何中文文案后，必须把新文案补进本脚本的
-│   │                              #   UI_STRINGS 并重跑，否则那个字在屏上是空白
-│   ├── show.py                    # 带行号打印 GBK 源码（read 类工具只认 UTF-8，源码是 GBK）
-│   └── verify_numbers.py          # 独立重算 CRC 表/算法、结构体尺寸、预分频、角度换算等常量
+│   │                              #   改界面中文文案后需把新文案加入本脚本的 UI_STRINGS 并重跑，
+│   │                              #   否则该字在屏上显示为空白
+│   ├── show.py                    # 带行号打印 GBK 源码，供阅读与检索
+│   └── verify_numbers.py          # 复核常量：CRC 表与算法、结构体尺寸、PWM 预分频、角度换算
 └── (第三方原理图与引脚表未收录，见下方说明)
 ```
 
