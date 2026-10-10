@@ -1,0 +1,64 @@
+{
+  "name": "智能药箱",
+  "appid": "",
+  "description": "智能药箱远程控制 App",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "app-plus": {
+    "usingComponents": true,
+    "nvueStyleCompiler": "uni-app",
+    "compilerVersion": 3,
+    "splashscreen": {
+      "alwaysShowBeforeRender": true,
+      "waiting": true,
+      "autoclose": true,
+      "delay": 0
+    },
+    "modules": {},
+    "distribute": {
+      "android": {
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.INTERNET\"/>"
+        ]
+      },
+      "ios": {},
+      "sdkConfigs": {}
+    }
+  },
+  "quickapp": {},
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false
+    },
+    "usingComponents": true
+  },
+  "h5": {
+    "title": "智能药箱",
+    "manifest": {
+      "name": "智能药箱",
+      "short_name": "智能药箱",
+      "description": "智能药箱远程控制",
+      "display": "standalone",
+      "orientation": "portrait",
+      "background_color": "#4A90D9",
+      "theme_color": "#4A90D9",
+      "start_url": "/",
+      "icons": [
+        {
+          "src": "/static/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/static/icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any maskable"
+        }
+      ]
+    }
+  },
+  "vueVersion": "3"
+}

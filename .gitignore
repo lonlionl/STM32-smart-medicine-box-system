@@ -1,0 +1,111 @@
+# ============================================================
+#  智能药箱系统 — Git 忽略规则
+# ============================================================
+
+# ---------- 密钥 / 本地配置（绝不提交）----------
+# 真实凭证只保留在本地，仓库里只放 *.example 模板
+credentials.csv
+DEVICES-KEY-*.txt
+DEVICES-CONNECT-KEY-*.txt
+server.local.js
+mqtt_huawei.local.h
+.env
+.env.*
+*.pem
+*.key
+*.p12
+
+# ---------- Keil MDK 编译产物 ----------
+Project/Objects/
+Project/Listings/
+Project/DebugConfig/
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.bin
+*.elf
+*.map
+*.lnp
+*.dep
+*.iex
+*.sct
+*.build_log.htm
+*.htm
+*.bak
+*.bak_*
+*.uvguix.*
+JLinkLog.txt
+JLinkSettings.ini
+
+# ---------- ESP-01S 固件 ----------
+# 除下面这个明显例外外，esp8285-1MB-at/ 下的固件均为乐鑫官方原版二进制（总量 ~14MB），
+# 不是本项目成果，不纳入仓库；请从乐鑫 esp-at release/v2.2.0.0_esp8266 分支下载。
+# 唯一例外：factory_param_ESP01S.bin 是本项目自行修改的产物
+# （把 AT 引脚从 GPIO15/GPIO13 改为 ESP-01S 实际使用的 GPIO1/GPIO3），必须保留。
+ESP8266固件烧录资料/esp8285-1MB-at/*
+!ESP8266固件烧录资料/esp8285-1MB-at/customized_partitions/
+!ESP8266固件烧录资料/esp8285-1MB-at/customized_partitions/factory_param_ESP01S.bin
+
+# ---------- 前端 / 后端 依赖与产物 ----------
+node_modules/
+dist/
+unpackage/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- 个人求职材料（仅本地，不公开）----------
+# Word 成品与 Markdown 源文件都不公开；.docx 由 tools/make_docs.py 生成
+简历-*.md
+简历-*.docx
+简历/
+resume/
+Resume/
+*调研报告*.md
+*调研报告*.docx
+求职/
+*.docx
+# Doc/ 下的 Word 成品属于生成物（源文件是 .txt），也不入库
+Doc/*.docx
+# 简历 PDF 与面试准备材料（含个人信息，绝不入库）
+*的简历.pdf
+面试准备-*.md
+面试准备-*.docx
+
+# ---------- 工具链 / 编辑器 / 系统 ----------
+.claude/
+.vscode/
+.idea/
+.cursor/
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/
+*.pyc
+
+# ---------- 本地工作用临时文件（批量改动时的留底与校验基线）----------
+# 编码转换前的源码备份、各子代理的改动留底、以及代码签名基线，都不入库
+_encoding_backup/
+_code_signature.json
+_bak_*
+_bak*/
+
+# ---------- 第三方参考文件（非本项目成果，不纳入仓库）----------
+# 正点原子精英板官方原理图与引脚分配表，版权归 ALIENTEK（正点原子）。
+# 仓库不收录，需要时从正点原子官方资料包获取。
+原子f103zet6总原理图.pdf
+精英板V2 IO引脚分配表.xlsx
+
+# ---------- 与项目无关的第三方工具包 ----------
+# （乐鑫烧录工具、安信可串口助手、ESP8266 原厂 SDK 源码等，非本项目成果）
+ESP8266固件烧录资料/ESP8266固件烧录资料/
+ESP8266固件烧录资料/esp8266at固件烧录工具包/
+ESP8266固件烧录资料/esp8266at固件烧录工具包.zip
+
+# ---------- 本机开发/一次性脚本（不入库）----------
+# 审计与一次性修复脚本移到此目录，保留在本机随时可用，但不进仓库
+tools/_dev/

@@ -1,0 +1,47 @@
+{
+    "services": [{
+        "service_id": "medicine_box_service",
+        "service_type": "medicine_box_service",
+        "description": "智能药箱核心功能服务",
+        "properties": [],
+        "commands": [{
+            "command_id": "remote_open",
+            "command_name": "远程开盒",
+            "params": [{
+                "para_name": "box_id",
+                "para_id": "box_id",
+                "data_type": "int",
+                "min": 1,
+                "max": 7,
+                "description": "目标药盒编号"
+            }]
+        }],
+        "events": [{
+            "event_id": "medicine_record",
+            "event_name": "服药记录上报",
+            "event_type": "info",
+            "params": [{
+                "para_name": "box_id",
+                "para_id": "box_id",
+                "data_type": "int",
+                "min": 1,
+                "max": 7,
+                "description": "药盒编号"
+            },
+            {
+                "para_name": "trigger_type",
+                "para_id": "trigger_type",
+                "data_type": "string",
+                "max_length": 20,
+                "description": "触发方式"
+            },
+            {
+                "para_name": "trigger_time",
+                "para_id": "trigger_time",
+                "data_type": "string",
+                "max_length": 30,
+                "description": "触发时间"
+            }]
+        }]
+    }]
+}

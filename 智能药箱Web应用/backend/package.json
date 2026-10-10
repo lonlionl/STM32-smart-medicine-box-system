@@ -1,0 +1,16 @@
+{
+  "name": "medicine-box-backend",
+  "version": "1.0.0",
+  "description": "智能药箱华为云 IoTDA 后端代理",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@huaweicloud/huaweicloud-sdk-core": "^3.1.0",
+    "@huaweicloud/huaweicloud-sdk-iotda": "^3.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "uuid": "^14.0.1"
+  }
+}
